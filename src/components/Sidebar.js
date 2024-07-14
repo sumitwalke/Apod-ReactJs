@@ -1,16 +1,21 @@
 import React from 'react'
 
-function Sidebar() {
+function Sidebar(props) {
+    const {handleToggleModal, data} = props
   return (
-    <div>
-       <h2>ME and Arpan</h2>
-       <div>
-        <p> Description </p>
-        <p>Lorem ipsum dolor sit amet 
-            consectetur adipisicing elit. Accusamus, fugiat?
-        </p>
-       </div>
-    </div>
+    <div className='sidebar'>
+        <div onClick={handleToggleModal} className="bgOverlay"></div>
+            <div className="sidebarContents">
+                <h2>{data?.title}</h2>
+                <div>
+                    <p className='descriptionTitle'>Description </p>
+                    <p>{data?.explanation}</p>
+                </div>
+                <button onClick={handleToggleModal}>
+                    <i className="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
   )
 }
 

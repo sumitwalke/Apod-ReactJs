@@ -1,10 +1,11 @@
 import React from 'react'
 
-function Main() {
+function Main(props) {
+    const {data} = props
   return (
-    <div>
-        <img src="demo.JPG" alt="" srcset="" />
-    </div>
+        <div className="imgContainer">
+            <img src={data?.url} className= "bgImage" alt={data?.title}/>
+        </div>
   )
 }
 
